@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Accordion} from "./components/Accordion/Accordion";
+import {Rating} from "./components/Rating/Rating";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+          <PageTittle title='This if App component' />
+          <input type={"date"}/>
+        <Accordion />
+        <Rating value={2}/>
+        <Rating value={4}/>
+      </>
+
   );
+}
+
+type PageTittleType = {
+    title: string
+}
+
+function PageTittle(props: PageTittleType) {
+    return <h1>{props.title}</h1>
 }
 
 export default App;
